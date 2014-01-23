@@ -48,5 +48,4 @@ npm module for the Adyen Payment service
     });
     
 ## TODO
-- test
 - add more payment method
