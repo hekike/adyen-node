@@ -4,7 +4,7 @@
   "description": "NodeJS module for the Adyen payment provider",
   "main": "./lib/adyen",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --timeout 5000 test"
   },
   "repository": {
     "url": "https://github.com/hekike/adyen-node"
@@ -12,5 +12,10 @@
   "author": "Péter Márton, @slashdotpeter",
   "dependencies": {
     "moment": "~2.5.1"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.1",
+    "chai": "~1.8.1",
+    "request": "~2.33.0"
   }
 }
