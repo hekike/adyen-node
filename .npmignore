@@ -3,3 +3,4 @@ test/
 DS_Store
 example.js
 app.js
+.travis.yml
