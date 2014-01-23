@@ -10,7 +10,7 @@ npm module for the Adyen Payment service
 
     // Init payment
     var
-      HPP = require('./lib/adyen').HPP;
+      HPP = require('adyen').HPP;
     
       hppPayment = new HPP({
         test: true,                                       
