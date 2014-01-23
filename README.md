@@ -19,7 +19,8 @@ npm module for the Adyen Payment service
     
         HMACKey: 'YourHMAC_Key',                          
     
-        merchantReference: 'DummyPaymentID',            // optional, default: 'PAYMENT-YYYY-MM-DDThh:mm:ssTZD'
+        merchantReference: 'DummyPaymentID',            // optional,
+                                                        // default: 'PAYMENT-YYYY-MM-DDThh:mm:ssTZD'
         paymentAmount: 100,                             // EUR 1,00 = 100
         currencyCode: 'EUR',                            // optional, default: 'EUR'
         shipBeforeDate: 2014-01-25                      // 'YYYY-MM-DD'
