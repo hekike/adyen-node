@@ -1,7 +1,7 @@
 {
   "name": "adyen",
   "version": "0.0.1",
-  "description": "NodeJS module for the Adyen paymen provider",
+  "description": "NodeJS module for the Adyen payment provider",
   "main": "./lib/adyen",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
