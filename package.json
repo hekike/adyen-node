@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "url": "https://github.com/hekike/adyen-node"
+  },
   "author": "Péter Márton, @slashdotpeter",
   "dependencies": {
     "moment": "~2.5.1"
