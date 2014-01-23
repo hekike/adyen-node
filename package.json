@@ -1,0 +1,13 @@
+{
+  "name": "adyen",
+  "version": "0.0.1",
+  "description": "NodeJS module for the Adyen paymen provider",
+  "main": "./lib/adyen",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Péter Márton, @slashdotpeter",
+  "dependencies": {
+    "moment": "~2.5.1"
+  }
+}
