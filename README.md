@@ -1,6 +1,7 @@
 adyen
 ==========
 ![alt tag](https://api.travis-ci.org/hekike/adyen-node.png)
+
 npm module for the Adyen Payment service
 
 
