@@ -8,6 +8,12 @@ npm module for the Adyen Payment service
 ## Installation
 
     $ npm install adyen
+
+## What is HPP?
+
+Adyen Hosted Payment Pages (HPPs).
+For more information please check the Adyen's documenation http://www.adyen.com/developers/documentation/ .
+
 ## Example for HPP
 
     // Init payment
