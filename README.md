@@ -12,7 +12,9 @@ Non official npm module for the Adyen Payment service.
 ## What is HPP?
 
 **Adyen Hosted Payment Pages (HPPs)**
-For more information please check the Adyen's documenation http://www.adyen.com/developers/documentation/ .
+
+For more information please check the Adyen's documenation
+http://www.adyen.com/developers/documentation/
 
 ## Example for the HPP payment
 
