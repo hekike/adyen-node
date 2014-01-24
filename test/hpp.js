@@ -27,6 +27,14 @@ describe('HPP', function () {
       expect(hppPayment).not.to.be.undefined;
     });
 
+    it('should throw error', function () {
+      function validate() {
+        new HPP();
+      }
+
+      expect(validate).to.throw(Error);
+    });
+
     it('should generate url and merchantReference', function (done) {
       hppPayment.generateRequest(function (err, url, merchantReference) {
         expect(url).to.be.a('string');
