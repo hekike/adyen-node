@@ -36,7 +36,6 @@ describe('HPP', function () {
 
     it('should generate url and merchantReference', function (done) {
       hppPayment.generateRequest(function (err, url, merchantReference) {
-        console.log(url);
         expect(url).to.be.a('string');
         expect(merchantReference).to.be.a('string');
         expect(merchantReference).to.have.string('PAYMENT-');
