@@ -49,6 +49,11 @@ http://www.adyen.com/developers/documentation/
         // offset                                       // optional: check the Adyen documentation
         // offerEmail                                   // optional: check the Adyen documentation
         // shopperStatement: ''                         // optional
+        
+        // if skipSelection is enabled the user will not be asked for a payment method but directly comes
+        // to the payment page for the method specified by brandCode (e.g. paypal)
+        // brandCode                                    // optional
+        // skipSelection                                // optional
       });
       
     
