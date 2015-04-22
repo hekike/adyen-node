@@ -54,6 +54,9 @@ http://www.adyen.com/developers/documentation/
         // to the payment page for the method specified by brandCode (e.g. paypal)
         // brandCode                                    // optional
         // skipSelection                                // optional
+        
+        // for redirecting the user to your custom page instead of the adyen confirmation page
+        // resURL                                       // optional
       });
       
     
