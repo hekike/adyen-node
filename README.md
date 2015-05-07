@@ -38,6 +38,7 @@ http://www.adyen.com/developers/documentation/
         sessionValidity: 'YYYY-MM-DDThh:mm:ssZ',        // optional (lib do this), default: 24h
 
         // Optional for the payment
+        recurringContract: 'RECURRING',                 // For recurring payments (see Adyen documentation)
         shopperLocale: 'nl_NL',                         // optional: 'en_US'
         orderData: 'XY 1 year subscription',            // optional
         merchantReturnData: '',                         // optional

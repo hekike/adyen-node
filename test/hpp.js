@@ -8,6 +8,7 @@ var
 
 describe('HPP', function () {
   var hppPayment;
+  var zeroAmountPayment;
 
   before(function () {
     hppPayment = new HPP({
@@ -16,6 +17,17 @@ describe('HPP', function () {
       skinCode: 'Iix4eLo8',
       merchantAccount: 'JessePiscaerCOM',
       paymentAmount: 1000,
+      currencyCode: 'EUR'
+    });
+  });
+
+  before(function() {
+    zeroAmountPayment = new HPP({
+      test: true,
+      HMACKey: '123456',
+      skinCode: 'Iix4eLo8',
+      merchantAccount: 'JessePiscaerCOM',
+      paymentAmount: 0,
       currencyCode: 'EUR'
     });
   });
@@ -45,6 +57,16 @@ describe('HPP', function () {
         expect(url).to.contain('JessePiscaerCOM');
         expect(url).to.contain('EUR');
         expect(url).to.contain('Iix4eLo8');
+
+        done();
+      });
+    });
+
+    it('should accept zero amount payments', function(done) {
+      zeroAmountPayment.generateRequest(function (err, url, merchantReference) {
+        expect(url).to.be.a('string');
+
+        expect(url).to.contain('paymentAmount');
 
         done();
       });
