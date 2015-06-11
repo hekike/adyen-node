@@ -98,6 +98,108 @@ http://www.adyen.com/developers/documentation/
       var isValid = validateHPP.validatePayment();
       console.log(isValid);
 
+## Example for Recurring Contract creation
+    // Init validator
+    var
+      CreateRecurringContract = require('adyen').CreateRecurringContract;
+
+    var createRecurringContract = new CreateRecurringContract ( {
+        test: true,                                     // optional: true for Adyen test environment
+
+        auth: {
+            login: 'YourWSUser,
+            password: 'YourWSPassword+4w?cQTJGs~EsPn9J'
+        },
+
+        merchantAccount: 'yourMerchantAccount',         // The merchant account you want to process this payment with.
+        shopperEmail: 'test@test.com',
+        shopperReference: 'shopperID',                  // Your unique ID for the shopper.
+                                                        //    * This shopperReference must be the same as the shopperReference used in the initial payment.
+        recurringContract: 'RECURRING',                 // The type of recurring contract to be used. "ONECLICK" or "RECURRING"
+        selectedRecurringDetailReference: "LATEST",
+        reference: "DummyPaymentID",
+        paymentAmount: 100,                             // EUR 1,00 = 100
+        currencyCode: 'EUR',                            // optional (lib do this), default: 'EUR'
+        shopperIP: '111.222.111.222',                   // recommended: The shopper's IP address.
+        // fraudOffset                                  // optional: An integer that is added to the normal fraud score.
+        // cardCVC                                      // optional: The card validation code. (only required for OneClick card payments)
+    } );
+
+    // Create the recurring contract
+    createRecurringContract.create ( function ( error, data )
+    {
+        if ( error )
+        {
+            console.log ( error );
+        }
+
+        console.log ( data );
+    } );
+
+## Example for retrieving a Recurring Contract
+    // Init validator
+    var
+      RetrieveRecurringContract = require ( 'adyen' ).RetrieveRecurringContract;
+
+    var
+      retrieveRecurringContract = new RetrieveRecurringContract ( {
+        test: true,                                       // Use Adyen test env
+
+        auth: {
+            login: 'YourWSUser,
+            password: 'YourWSPassword+4w?cQTJGs~EsPn9J'
+        },
+
+        merchantAccount: 'yourMerchantAccount',           // The merchant account you want to process this payment with.
+        shopperReference: 'shopperID',                    // Your unique ID for the shopper.
+                                                          //    * This shopperReference must be the same as the shopperReference used in the initial payment.
+        recurringContract: 'RECURRING'                    // The type of recurring contract to be used. "ONECLICK" or "RECURRING"
+    } ),
+
+  // Retrieve the recurring contract
+  retrieveRecurringContract.list ( function ( error, data )
+  {
+        if ( error )
+        {
+            console.log ( error );
+        }
+
+        console.log ( data );
+  } );
+
+## Example for disabling a Recurring Contract
+    // Init validator
+    var
+      DisableRecurringContract = require ( 'adyen' ).DisableRecurringContract;
+
+    var
+      disableRecurringContract = new DisableRecurringContract ( {
+        test: true,                                       // Use Adyen test env
+
+        auth: {
+            login: 'YourWSUser,
+            password: 'YourWSPassword+4w?cQTJGs~EsPn9J'
+        },
+
+        merchantAccount: 'yourMerchantAccount',                   // The merchant account you want to process this payment with.
+        shopperReference: 'shopperID',                            // Your unique ID for the shopper.
+                                                                  //    * This shopperReference must be the same as the shopperReference used in the initial payment.
+        recurringDetailReference: 'yourRecurringDetailReference'  // The recurringDetailReference of the details you wish to disable. If you do
+                                                                  //    * not supply this field all details for the shopper will be disabled including
+                                                                  //    * the contract! This means that you can not add new details anymore.
+    } ),
+
+  // Disable the recurring contract
+  disableRecurringContract.list ( function ( error, data )
+  {
+        if ( error )
+        {
+            console.log ( error );
+        }
+
+        console.log ( data );
+  } );
+
 ## TODO
 - custom HPP payment
 - add more payment method
