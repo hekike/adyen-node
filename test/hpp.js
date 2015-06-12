@@ -1,10 +1,8 @@
 /* jshint expr: true */
 'use strict';
 
-var
-  expect = require('chai').expect,
-  request = require('request'),
-  HPP = require('./../lib/adyen').HPP;
+var expect = require('chai').expect;
+var HPP = require('./../lib/adyen').HPP;
 
 describe('HPP', function () {
   var hppPayment;
@@ -63,7 +61,7 @@ describe('HPP', function () {
     });
 
     it('should accept zero amount payments', function(done) {
-      zeroAmountPayment.generateRequest(function (err, url, merchantReference) {
+      zeroAmountPayment.generateRequest(function (err, url) {
         expect(url).to.be.a('string');
 
         expect(url).to.contain('paymentAmount');
