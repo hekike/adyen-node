@@ -11,6 +11,7 @@
   },
   "author": "Péter Márton, @slashdotpeter",
   "dependencies": {
+    "crypto-js": "^3.1.5",
     "moment": "~2.10.3"
   },
   "devDependencies": {
