@@ -3,8 +3,8 @@
 
 /*
  * Test return url from Adyen
- * merchantReference=PAYMENT-2014-01-24T10%3A32%3A33%2B01%3A00&skinCode=Iix4eLo8&shopperLocale=en_US&paymentMethod=bankTransfer_NL&authResult=PENDING&pspReference=8513905559646033&merchantSig=UTjYxg3fftV5m%2Bc9GNVNCWq4dvg%3D
- * console.log(decodeURIComponent('merchantReference=PAYMENT-2014-01-24T10%3A32%3A33%2B01%3A00&skinCode=Iix4eLo8&shopperLocale=en_US&paymentMethod=bankTransfer_NL&authResult=PENDING&pspReference=8513905559646033&merchantSig=UTjYxg3fftV5m%2Bc9GNVNCWq4dvg%3D'));
+ * authResult=AUTHORISED&merchantReference=PAYMENT-2016-08-04T03%3A59%3A49%2B02%3A00&merchantSig=ghU3YQgOm3iaGG6nO99C6PxUxcpaymFutAOQmR33QHo%3D&paymentMethod=visa&pspReference=8814703192495637&shopperLocale=en_US&skinCode=Q3FaI33C
+ * console.log(decodeURIComponent('authResult=AUTHORISED&merchantReference=PAYMENT-2016-08-04T03%3A59%3A49%2B02%3A00&merchantSig=ghU3YQgOm3iaGG6nO99C6PxUxcpaymFutAOQmR33QHo%3D&paymentMethod=visa&pspReference=8814703192495637&shopperLocale=en_US&skinCode=Q3FaI33C'));
  */
 
 var expect = require('chai').expect;
@@ -15,12 +15,14 @@ describe('Validate HPP', function () {
 
   before(function () {
     validateHPP = new ValidateHPP({
-      HMACKey: '123456',
-      skinCode: 'Iix4eLo8',
-      authResult: 'PENDING',
-      pspReference: '8513905559646033',
-      merchantReference: 'PAYMENT-2014-01-24T10:32:33+01:00',
-      merchantSig: 'UTjYxg3fftV5m+c9GNVNCWq4dvg='
+      HMACKey: 'A7CCEBC43D14B70990C5E056059059544800F3B21274FD847D269DC5965FB2F2',
+      skinCode: 'Q3FaI33C',
+      authResult: 'AUTHORISED',
+      pspReference: '8814703192495637',
+      merchantReference: 'PAYMENT-2016-08-04T03:59:49+02:00',
+      merchantSig: 'ghU3YQgOm3iaGG6nO99C6PxUxcpaymFutAOQmR33QHo=',
+      shopperLocale: 'en_US',
+      paymentMethod: 'visa'
     });
   });
 

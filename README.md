@@ -89,6 +89,8 @@ http://www.adyen.com/developers/documentation/
         pspReference: 'pspReference From the callback url',
         merchantReference: 'merchantReference From the callback url',
         merchantSig: 'merchantSig From the callback url'
+        shopperLocale: 'shopperLocale From the callback url'
+        paymentMethod: 'paymentMethod From the callback url'
 
         // Optional for the validation
         merchantReturnData: ''                          // optional
