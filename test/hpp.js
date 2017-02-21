@@ -44,12 +44,12 @@ describe('HPP', function () {
       expect(validate).to.throw(Error);
     });
 
-    it('should generate url and merchantReference', function (done) {
-      hppPayment.generateRequest(function (err, url, merchantReference) {
+    it('should generate url and paymentData', function (done) {
+      hppPayment.generateRequest(function (err, url, paymentData) {
         expect(url).to.be.a('string');
-        expect(merchantReference).to.be.a('string');
-        expect(merchantReference).to.have.string('PAYMENT-');
-
+        expect(paymentData).to.be.a('object');
+        expect(paymentData.merchantReference).to.have.string('PAYMENT-');
+        
         expect(url).to.match(/((http|https):\/\/(\w+:{0,1}\w*@)?(\S+)|)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/);
 
         expect(url).to.contain('JessePiscaerCOM');
