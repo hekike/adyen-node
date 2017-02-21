@@ -27,11 +27,11 @@ var
     // offset                                         // optional, Numeric value that will be added to the fraud score (optional)
   });
 
-hppPayment.generateRequest(function (err, url, merchantReference) {
+hppPayment.generateRequest(function (err, url, paymentData) {
   if (err) {
     return console.error(err);
   }
 
-  console.log(merchantReference);
+  console.log(paymentData);
   console.log(url);
 });

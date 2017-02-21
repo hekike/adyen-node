@@ -63,12 +63,12 @@ http://www.adyen.com/developers/documentation/
     
     
     // Get URL to the payment window
-    hppPayment.generateRequest(function (err, url, merchantReference) {
+    hppPayment.generateRequest(function (err, url, paymentdata) {
       if (err) {
         return console.error(err);
       }
     
-      console.log(merchantReference);
+      console.log(paymentData);
       console.log(url);
     });
 
