@@ -1,6 +1,6 @@
 {
   "name": "adyen",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "NodeJS module for the Adyen payment provider",
   "main": "./lib/adyen",
   "license": "MIT",
