@@ -1,5 +1,8 @@
-adyen
+# DEPRECATED, use the official [adyen-node-api-library](https://github.com/Adyen/adyen-node-api-library).
+
+adyen (DEPRECATED)
 ==========
+
 [![Build Status](https://travis-ci.org/hekike/adyen-node.png?branch=master)](https://travis-ci.org/hekike/adyen-node)
 
 Non official npm module for the Adyen Payment service.
